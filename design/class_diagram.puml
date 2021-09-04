@@ -1,0 +1,29 @@
+@startuml
+
+class SpreadsheetProcessorController {
+    - RealEstateSpreadsheetProcessor
+    - FileStorageHelper
+
+    + execute(Request) : String download_url
+}
+
+class RealEstateSpreadsheetProcessor {
+    + process_file(String buffer) : List of dicts
+    - convert_string_buffer_to_dict_list(String) : List of dicts
+    - convert_amount_to_numeric(String entry, String amount) : String amount
+    - convert_address_to_city(String address) : String city
+    - convert_address_to_state(String address) : String state
+    - convert_address_to_zip_code(String address) : String zip_code
+}
+
+class FileStorageHelper {
+    - boto3.client
+
+    + upload_to_file_storage(List of dicts) : String 
+    - convert_dict_to_string_buffer(List of dicts) : String
+}
+
+SpreadsheetProcessorController --|> RealEstateSpreadsheetProcessor
+SpreadsheetProcessorController --|> FileStorageHelper
+
+@enduml

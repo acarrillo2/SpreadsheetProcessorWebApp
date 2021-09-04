@@ -1,0 +1,4 @@
+Address,Date,Entry,Amount,Notes
+"123 W Main St, Boise, ID, 12345",01/01/2021,Credit,USD $2000.00,Rent received
+"123 W Main St, Boise, ID, 12345",01/06/2021,Debit,USD $50.00,Drywall patch
+"123 W Main St, Boise, ID, 12345",01/06/2021,Debit,USD $123.00,Landscaping
