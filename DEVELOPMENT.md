@@ -12,3 +12,8 @@ To run the dev server run:
 ```
 python src/manage.py runserver
 ```
+
+To create a new secret key:
+```
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
