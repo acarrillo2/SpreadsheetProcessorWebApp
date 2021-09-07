@@ -1,7 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from file_uploader_app.controller import SpreadsheetProcessorController
 
 # Create your views here.
 
 def home(request):
-    return HttpResponse("<h1>SpreadsheetProcessor</h1>")
+    controller = SpreadsheetProcessorController()
+    return controller.execute(request)
